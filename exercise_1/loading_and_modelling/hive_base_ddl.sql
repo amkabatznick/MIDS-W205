@@ -58,7 +58,7 @@ DROP TABLE readmissions;
 CREATE EXTERNAL TABLE readmissions
 (
     provider_id	string,
-    hosptial_name	string,
+    hospital_name	string,
     address	string,
     city string,
     state	string,
