@@ -19,4 +19,4 @@ Select
   cast(concat(substr(measure_start_date,7,4),'-',substr(measure_start_date,1,2),'-',substr(measure_start_date,4,2)) as DATE) measure_start_date,
   cast(concat(substr(measure_end_date,7,4),'-',substr(measure_end_date,1,2),'-',substr(measure_end_date,4,2)) as DATE) measure_end_date
 from effective_care
-where where cast(score as int) is not null;
+where cast(score as int) is not null;
