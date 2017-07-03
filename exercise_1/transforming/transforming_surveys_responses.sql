@@ -36,4 +36,7 @@ Select
   cast(hcahps_base_score as	int) hcahps_base_score,
   cast(hcahps_consistency_score as int) hcahps_consistency_score
 from
-  surveys_responses;
+  surveys_responses
+where
+    cast(hcahps_base_score as int) is not null
+    and cast(hcahps_consistency_score as int) is not null;
