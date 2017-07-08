@@ -33,7 +33,9 @@ With full_hospitals as
 
     Select
       state,
-      avg(total_score) avg_total_score
+      avg(total_score) avg_total_score,
+      sum(total_score) total_score,
+      stddev_pop(total_score) standard_deviation_score
     from
     (
       Select
