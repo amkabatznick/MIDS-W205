@@ -25,7 +25,7 @@ With full_hospitals as
               'READM_30_HIP_KNEE'
               )
           group by
-            hospital_name
+            provider_id
           having
             measure_ids = 12
       ) a
