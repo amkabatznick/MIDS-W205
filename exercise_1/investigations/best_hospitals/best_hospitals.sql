@@ -34,7 +34,9 @@ With full_hospitals as
     Select
         a.provider_id,
         a.hospital_name,
-        sum(score) total_score
+        sum(score) total_score,
+        avg(score) avg_score,
+        stddev_pop(score) standard_deviation_score
     from
       my_readmissions a
     join
