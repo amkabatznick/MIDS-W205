@@ -1,11 +1,11 @@
 With full_hospitals as
 (
   Select
-    hospital_name
+    provider_id
   from
     (
         Select
-          hospital_name,
+          provider_id,
           count(*) as measure_ids
         from
           my_readmissions
@@ -32,6 +32,7 @@ With full_hospitals as
     )
 
     Select
+        a.provider_id,
         a.hospital_name,
         sum(score) total_score
     from
@@ -39,9 +40,10 @@ With full_hospitals as
     join
       full_hospitals b
     on
-        a.hospital_name = b.hospital_name
+        a.provider_id = b.provider_id
     group by
-      a.hospital_name
+      a.hospital_name,
+      a.provider_id
     order by
       total_score
     limit 10;
