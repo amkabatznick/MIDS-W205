@@ -1,11 +1,11 @@
 With full_hospitals as
 (
   Select
-    hospital_name
+    provider_id
   from
     (
         Select
-          hospital_name,
+          provider_id,
           count(*) as measure_ids
         from
           my_readmissions
@@ -25,7 +25,7 @@ With full_hospitals as
               'READM_30_HIP_KNEE'
               )
           group by
-            hospital_name
+              provider_id
           having
             measure_ids = 12
       ) a
@@ -47,7 +47,7 @@ With full_hospitals as
       join
         full_hospitals b
       on
-          a.hospital_name = b.hospital_name
+          a.provider_id = b.provider_id
       where measure_id in
               (
                 'MORT_30_CABG',

@@ -1,0 +1,5 @@
+According to our analysis the top patient rated hospitals are
+
+To be consistent with our prior hospital analysis, we have removed surgical centers and specialty hospitals which can't be accurately evaluated across a variety of procedures.
+
+When comparing the ranks of each hospital by our effective care to the relative ranks of how patients view hospitals the ranking is just..

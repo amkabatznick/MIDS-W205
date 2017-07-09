@@ -1,12 +1,11 @@
-We found the following 10 procedures had the highest variability among hospitals....
-
-For our scoring metric, we looked at the standard deviations in score for most of the measures in the the my_effective_care database. We excluded several items we believed did not meet the criteria of being a procedure. We give further discussion to this later in this analysis. As these scores are all measured in a consistent unit (%), we are comfortable using SD as our variability metric.
+We found the following 10 procedures had the highest variability among hospitals:
 
 
-Given the average variability of the scores.
-
+For our scoring metric, we looked at the standard deviations in score for most of the measures in the the my_effective_care database. We excluded several items, for reasons we give further discussion to this later in this analysis.
 
 We excluded
 
 
 because...
+
+All of the remaining metrics we evaluate have scores that are measured in a consistent unit (%). As a result, we are comfortable using SD as our variability metric. Also, when comparing our results to the average standard deviations of all measures (7.8%) our outcomes are significantly higher, given us further confidence in our analysis.
