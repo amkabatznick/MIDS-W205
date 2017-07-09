@@ -1,16 +1,16 @@
 We have identified these 10 hospitals as models of high quality care, as they possessed consistently high scores across a variety of procedures.
 
-Hospital Id	Hospital Name							Score
-50625		CEDARS-SINAI MEDICAL CENTER					164
-160029	MERCY HOSPITAL							165
-260179	ST LUKES HOSPITAL							165
-330214	NYU HOSPITALS CENTER						166
-220035	NORTH SHORE MEDICAL CENTER					168
-50573		EISENHOWER MEDICAL CENTER					168
-330182	ST FRANCIS HOSPITAL, ROSLYN					168
-450610	MEMORIAL HERMANN MEMORIAL CITY MEDICAL CENTER	169
-100087	SARASOTA MEMORIAL HOSPITAL					169
-130006	ST LUKE'S REGIONAL MEDICAL CENTER				169
+provider_id	 hospital_name	total_score	avg_score	sd_score
+160029	MERCY HOSPITAL	136	11.3333	4.515405728
+50625	CEDARS-SINAI MEDICAL CENTER	136	11.3333	5.451809078
+260179	ST LUKES HOSPITAL	137	11.4167	5.298715777
+330182	ST FRANCIS HOSPITAL, ROSLYN	138	11.5	5.454356057
+420087	ROPER HOSPITAL	139	11.5833	5.05731044
+450610	MEMORIAL HERMANN MEMORIAL CITY MEDICAL CENTER	139	11.5833	4.78641016
+220035	NORTH SHORE MEDICAL CENTER	140	11.6667	5.343739847
+50573	EISENHOWER MEDICAL CENTER	140	11.6667	4.904646323
+450358	METHODIST HOSPITAL,THE	141	11.75	5.903741751
+330214	NYU HOSPITALS CENTER	141	11.75	5.524566348
 
 As our scoring metric, we picked the hospitals that had a minimum total score of the variables listed below, which can all be found in the my_readmissions table:
 
@@ -27,12 +27,10 @@ READM_30_PN
 READM_30_STK
 READM_30_HOSP_WIDE
 
-We only looked at hospitals that were scored in all of these variables to eliminate specialty hospitals which excelled in one particularly area of treatment, but did not offer broad based care. 
+We only looked at hospitals that were scored in all of these variables to eliminate specialty hospitals which excelled in one particularly area of treatment, but did not offer broad based care. Additionally, we felt that looking at the totals was a better metric as the scoring was not consistent among the variables, which could result in the average possibly being biased by an outlier in one variable.
 
-To come up with these as our principal scoring metric, we looked through the US Government site for Medicare, and evaluated the 57 metrics they use to compare hopsitals1, and found several of the variables they were using should be excluded from our study for reasons we will touch on a little later in our analysis.  We were comfortable moving forward with only these variables as we felt that hospitals that compared favorably against the national average in Mortality and Readmission across a variety of procedures were clearly outstanding in their patient care as they saved patients lives and were able to do so in a way that mitigate future complications. 
+To come up with these as our principal scoring metric, we looked through the US Government site for Medicare, and evaluated the 57 metrics they use to compare hopsitals1, and found several of the variables they were using should be excluded from our study for reasons we will touch on a little later in our analysis.  We were comfortable moving forward with only these variables as we felt that hospitals that compared favorably against the national average in Mortality and Readmission across a variety of procedures were clearly outstanding in their patient care as they saved patients lives and were able to do so in a way that mitigate future complications.
 
-As mentioned above, we felt several of the variables the government includes could not viably be included in our analysis. First we excluded the Safety of Care and Efficient Use of Medical Imaging variables, as these metrics were not included in our study. Next we excluded the ÒPatient ExperienceÓ variables from our analysis because a later study asks us to compare our hospital rankings against patient satisfaction, so we concluded that including them in our hospital rankings would bias our results. Additionally we excluded the Effectiveness of Care of variables as they were measured in percentages and the variables were not consistent in the direction with some variables being scored positively and others negatively. Lastly, we excluded the Timeliness of Care variables as we felt it would punish urban hospitals, who were more like to see a large number of patients that rural hospitals and thus may be slower in getting to their patients but ultimately offered high levels of care.
+As mentioned above, we felt several of the variables the government includes could not viably be included in our analysis. First we excluded the Safety of Care and Efficient Use of Medical Imaging variables, as these metrics were not included in our study. Next we excluded the ï¿½Patient Experienceï¿½ variables from our analysis because a later study asks us to compare our hospital rankings against patient satisfaction, so we concluded that including them in our hospital rankings would bias our results. Additionally we excluded the Effectiveness of Care of variables as they were measured in percentages and the variables were not consistent in the direction with some variables being scored positively and others negatively. Lastly, we excluded the Timeliness of Care variables as we felt it would punish urban hospitals, who were more like to see a large number of patients that rural hospitals and thus may be slower in getting to their patients but ultimately offered high levels of care.
 
 1. https://www.medicare.gov/hospitalcompare/Data/Measure-groups.html
-
-
