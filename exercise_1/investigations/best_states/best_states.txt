@@ -1,1 +1,19 @@
-Building on our analysis of best hospitals, we have identified these 10 states as models of high quality care, as they possessed consistently high scores across a variety of procedures across their hospitals.State	Average_Score	  total_score Score	  VariablilityHI	148.3333	445	2.0548046676563256IA	149.2	1492	21.202829999790122MT	149.8	749	4.166533331199932NH	150.25	601	4.264680527307995DE	151	453	2.160246899469287CO	151	1661	4.199567077254945OR	151.2	1512	3.1559467676119MA	151.8333	1822	4.792934614849468ID	152.4	762	6.56048778674269MN	153.1	1531	5.80430874437258As our metric for evaluating care within a state we looked for states that had the lowest average total score for the hospitals in their state. We thought the best average hopsital score would be the most representative as it controls for differences in state size. (For further discussion of why we chose the lowest average score look to our in-depth explanation in best_hospitals.txt.) As menionted, given the relative size difference amoung states we didn't feel it was appropriate to use an aggregate metric to evaluate state performance. Additionally, we chose not to use variability as we we felt that a state with consistently poor perfomance, and thus low variability, should not compare favoriably with states that had both good and bad perfoming hospitals, and thus higher variabilty.As mentioned, while Iowa has high variability it has a much lower average score than most other states. Additionally, Deleware has limited variability among the three hospitals in the state, but its average score is worse than the the states above it. As a result our results seem to be consistent with our conculusions.
+Building on our analysis of best hospitals, we have identified these 10 states as models of high quality care, as they possessed scores that consistently outperformed the national average across a variety of procedures across their hospitals.
+
+State	Average_Score	total_score	Variablility
+HI	148.3333	445	2.0548046676563256
+MT	149.8	749	4.166533331199932
+NH	150.25	601	4.264680527307995
+DE	151	453	2.160246899469287
+CO	151.0769	1964	3.9117483492588057
+MA	151.7143	2124	6.08779307218929
+OR	152.1818	1674	4.3236807093069505
+ID	152.4	762	6.56048778674269
+MN	153	1989	5.114083119567588
+SD	153.5	307	1.5
+
+As our metric for evaluating care within a state we looked for states that had the lowest average total score for the hospitals in their state. We thought the best average hospital score would be the most representative as it controls for differences in state size. (For further discussion of why we chose the lowest average score look to our in-depth explanation in best_hospitals.txt.) As mentioned, given the relative size difference among states we didn't feel it was appropriate to use an aggregate metric to evaluate state performance. Additionally, we chose not to use variability as we felt that a state with consistently poor performance, and thus low variability, should not compare favorably with states that had both good and bad performing hospitals, and thus higher variability. 
+
+As mentioned, while Iowa has high variability it average score compares favorably with most other states. Additionally, South Dakota has limited variability between the two hospitals in the state, but its average score is worse than the states above it. As a result our results seem to be consistent with our conclusions that the average is the best metric to use. Additionally, we can take confidence in our analysis as we see a mix of small and large states in our results.
+
+Lastly, and most importantly, we can gain confidence in our results by comparing the top states versus the top hospitals. We would expect that our top states would have worse scores than the top 10 hospitals as even states with exceptional hospitals would have some hospitals that were not exceptional. As expected the top state has a worse score than each of the top 10 hospitals.

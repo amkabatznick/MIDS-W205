@@ -1,11 +1,20 @@
 We found the following 10 procedures had the highest variability among hospitals:
 
+measure_id	measure_name	sd_score
+STK_4	Thrombolytic Therapy	21.95419456
+AMI_7a	Fibrinolytic Therapy Received Within 30 Minutes Of Hospital Arrival	18.77942136
+OP_2	Fibrinolytic Therapy Received Within 30 Minutes of ED Arrival	18.0484438
+VTE_5	Warfarin therapy discharge instructions	16.30300467
+VTE_1	Venous thromboembolism prophylaxis	15.25740114
+IMM_2	Immunization for influenza	11.94488592
+HF_1	Discharge instructions	11.82798118
+HF_2	Evaluation of LVS Function	10.41182331
+STK_6	Discharged on Statin Medication	10.03731154
+PN_6	Initial antibiotic selection for CAP in immunocompetent patient	9.275894473
 
-For our scoring metric, we looked at the standard deviations in score for most of the measures in the the my_effective_care database. We excluded several items, for reasons we give further discussion to this later in this analysis.
+For our scoring metric, we looked at the standard deviations in score for most of the measures in the my_effective_care database. We excluded several items, for reasons we give further discussion to this later in this analysis.
 
-We excluded
+As part of our analysis of procedure variability we excluded several variables, which we felt would skew our results. We excluded the condition “Pregnancy and Delivery Care” because this indicates the percentage of pregnancies that were induced vs. natural and we felt that certain high traffic areas might induce pregnancies more frequently so they could attempt to control the influx of patients. Additionally, we excluded the conditions “Emergency Department”, because these variables mostly corresponded to time to procedure while all of the other metrics were measured in percent. For the same reason we excluded the measure names “Median Time to ECG”, “Median Time to Fibrinolysis”, and “Median Time to Transfer to Another Facility for Acute Coronary Intervention”. Additionally, we excluded the measure names “Stroke Education” and the “Home Management Plan of Care Document” because we felt these were not actual procedures. Lastly, we exclude the measure name “Healthcare workers given influenza vaccination” because we felt this was not a procedure directly tied to patient care.
+ 
+All of the remaining metrics we evaluate have scores that are measured in a consistent unit (%). As a result, we are comfortable using SD as our variability metric. Also, when comparing our results to the average standard deviations of all measures (7.8%) our outcomes are significantly higher giving us further confidence in our analysis. Also AMI_7a and OP_2 are very closely related metrics and the fact that they share a similar standard deviation gives us confidence in our analysis.
 
-
-because...
-
-All of the remaining metrics we evaluate have scores that are measured in a consistent unit (%). As a result, we are comfortable using SD as our variability metric. Also, when comparing our results to the average standard deviations of all measures (7.8%) our outcomes are significantly higher, given us further confidence in our analysis.

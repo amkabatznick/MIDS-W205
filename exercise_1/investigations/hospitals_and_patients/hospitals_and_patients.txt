@@ -1,5 +1,24 @@
-According to our analysis the top patient rated hospitals are
+Based on our on analysis our rankings of hospital quality share only a 0.1351 correlation with how patients rank hospitals.
 
-To be consistent with our prior hospital analysis, we have removed surgical centers and specialty hospitals which can't be accurately evaluated across a variety of procedures.
+As a result, according to our analysis average scores for hospital quality are not strongly correlated with patient survey responses. We used our existing hospital scoring procedure for effective care (identified in hospitals.txt) and then ranked each hospital. For consistency, we then used the same list of hospitals to look at patient responses using the my_surveys_responses table.
 
-When comparing the ranks of each hospital by our effective care to the relative ranks of how patients view hospitals the ranking is just..
+As a reminder this excludes surgical centers and specialty hospitals, which may perform only a small subset of procedures and only looked at hospitals, which had been scored in all of these metrics:
+
+MORT_30_CABG
+MORT_30_COPD
+MORT_30_HF
+MORT_30_PN
+MORT_30_STK
+READM_30_CABG
+READM_30_COPD
+READM_30_HF
+READM_30_HIP_KNEE
+READM_30_PN
+READM_30_STK
+READM_30_HOSP_WIDE
+
+For those hospitals that had been ranked in each of the above metrics, we then took the sum of the hcahps_base_score and the hcahps_consistency_score to come up with a total patient rating for the hospital. We then ranked these scores and took the correlation between this and our effective care ranking, which resulted in the 0.1351 above.
+
+While the correlation between patient ratings and our ratings are surprisingly low, it is not entirely surprising. First our effective care analysis excluded variables relating to patient wait times in the Emergency Department, which is something that would likely have a significant effect on patient ratings. Additionally unless patients experience complications with their initial procedure, they are unlikely to attend multiple hospitals and thus can’t effectively compare them. Additionally, those hospitals that effectively treated someone the first time may get an average rating, but the hospitals that receive a patient following a complication at another hospital are likely to be more highly rated by the patient. These hospitals are more likely to be high profile hospitals in urban areas, thus the patient satisfaction may unfairly punish smaller rural hospitals that may be providing excellent effective care.
+
+
