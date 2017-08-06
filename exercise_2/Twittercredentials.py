@@ -16,8 +16,8 @@ except:
     sys.stderr.write("TWITTER_ * environment variables not set \n")
     sys.exit(1)
 
-    auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-    auth.set_access_token(access_token, access_secret)
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+auth.set_access_token(access_token, access_secret)
 
 
 
