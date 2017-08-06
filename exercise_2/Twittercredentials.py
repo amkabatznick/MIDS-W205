@@ -1,23 +1,24 @@
 import tweepy
+import os
+import sys
 
-consumer_key = "YourConsumerkey";
-#eg: consumer_key = "YisfFjiodKtojtUvW4MSEcPm";
-
-
-consumer_secret = "YourConsumerSecret";
-#eg: consumer_secret = "YisfFjiodKtojtUvW4MSEcPmYisfFjiodKtojtUvW4MSEcPmYisfFjiodKtojtUvW4MSEcPm";
-
-access_token = "YourAcessToken";
-#eg: access_token = "YisfFjiodKtojtUvW4MSEcPmYisfFjiodKtojtUvW4MSEcPmYisfFjiodKtojtUvW4MSEcPm";
-
-access_token_secret = "YourTokenSecret";
-#eg: access_token_secret = "YisfFjiodKtojtUvW4MSEcPmYisfFjiodKtojtUvW4MSEcPmYisfFjiodKtojtUvW4MSEcPm";
+#All environment variables can be set using:
+# A. On MAC or Linux: export Key_Name = "Key Value"
+# B. On Windows: set Key_Name = "Key Value"
 
 
-auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-auth.set_access_token(access_token, access_token_secret)
+try:
+    consumer_key = os.environ['TWITTER_CONSUMER_KEY'];
+    consumer_secret = os.environ['TWITTER_CONSUMER_SECRET']
+    access_token = os.environ['TWITTER_ACCESS_TOKEN'];
+    access_secret = os.environ['TWITTER_ACCESS_SECRET']
+except:
+    sys.stderr.write("TWITTER_ * environment variables not set \n")
+    sys.exit(1)
+
+    auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+    auth.set_access_token(access_token, access_secret)
+
+
 
 api = tweepy.API(auth)
-
-
-
