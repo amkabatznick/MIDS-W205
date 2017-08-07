@@ -13,7 +13,7 @@ print "word is", word
 conn = psycopg2.connect(database="tcount", user="postgres", password="pass", host="localhost", port="5432")
 cur = conn.cursor()
 
-cur.execute("UPDATE tweetwordcount SET count=count+1 WHERE word=%s", (uWord,))
+cur.execute("UPDATE tweetwordcount SET count=count+1 WHERE word=%s", (word,))
 
 print "number of updated rows", cur.rowcount
 
