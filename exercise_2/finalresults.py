@@ -10,14 +10,14 @@ else:
     cur = conn.cursor()
 
     if len(sys.argv) == 1:
-        cur.execute("SELECT word, count from tweetwordcount")
+        cur.execute("SELECT word, count from tweetwordcount order by word")
         records = cur.fetchall()
         for rec in records:
-            print "(",rec[0],",",rec[1],")\n"
+            print "(%s,%s)\n" %(rec[0],rec[1])
     else:
       word = sys.argv[1]
       cur.execute("SELECT count from tweetwordcount WHERE word=%s", (word,))
-      print 'Total number of occurrences of "',word.strip(),'": ',cur.fetchone()[0]
+      print 'Total number of occurrences of "%s": %s"' %(word,cur.fetchone()[0])
 
     conn.commit()
     conn.close()
