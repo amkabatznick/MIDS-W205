@@ -29,12 +29,11 @@ class WordCounter(Bolt):
             if cur.rowcount == 0:
                 cur.execute("INSERT INTO tweetwordcount (word,count) \
                       VALUES (%s, 1)",(word.encode('utf8'),))
+            # Increment the local count
+            self.counts[word] += 1
+            self.emit([word, self.counts[word]])
 
-              # Increment the local count
-              self.counts[word] += 1
-              self.emit([word, self.counts[word]])
-
-              # Log the count - just to see the topology running
-              self.log('%s: %d' % (word, self.counts[word]))
+             # Log the count - just to see the topology running
+             self.log('%s: %d' % (word, self.counts[word]))
               
         self.conn.commit()
