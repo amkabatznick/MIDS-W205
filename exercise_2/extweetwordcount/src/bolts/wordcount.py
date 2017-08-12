@@ -33,7 +33,7 @@ class WordCounter(Bolt):
             self.counts[word] += 1
             self.emit([word, self.counts[word]])
 
-             # Log the count - just to see the topology running
-             self.log('%s: %d' % (word, self.counts[word]))
-              
+            # Log the count - just to see the topology running
+            self.log('%s: %d' % (word, self.counts[word]))
+
         self.conn.commit()
