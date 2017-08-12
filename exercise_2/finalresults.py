@@ -13,7 +13,7 @@ else:
         cur.execute("SELECT word, count from tweetwordcount")
         records = cur.fetchall()
         for rec in records:
-            print "(",rec[0],rec[1],")\n"
+            print "(",rec[0],",",rec[1],")\n"
     else:
       word = sys.argv[1]
       cur.execute("SELECT count from tweetwordcount WHERE word=%s", (word,))
