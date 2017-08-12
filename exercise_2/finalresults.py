@@ -19,9 +19,9 @@ else:
       word = word.lower()
       cur.execute("SELECT count from tweetwordcount WHERE word=%s", (word,))
       if not cur.rowcount:
-        print 'Total number of occurrences of "%s": %s"' %(word,0)
+        print 'Total number of occurrences of "%s": %s' %(word,0)
       else:
-        print 'Total number of occurrences of "%s": %s"' %(word,cur.fetchone()[0])
+        print 'Total number of occurrences of "%s": %s' %(word,cur.fetchone()[0])
 
     conn.commit()
     conn.close()
