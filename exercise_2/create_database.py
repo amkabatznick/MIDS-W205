@@ -10,7 +10,7 @@ try:
     conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
     cur = conn.cursor()
     #Drop the database if it already exists
-    conn.cursor("DROP DATABASE IF EXISTS tcount")
+    cur.execute("DROP DATABASE IF EXISTS tcount")
     cur.execute("CREATE DATABASE tcount")
     cur.close()
     conn.close()
