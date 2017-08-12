@@ -10,7 +10,7 @@ from time import time,ctime
 import simplejson
 
 class StdOutListener(StreamListener):
-   
+
     def __init__(self,timer):
         self.inc = 0
         StreamListener.__init__(self)
@@ -20,7 +20,7 @@ class StdOutListener(StreamListener):
         print "Start Time = %s"%(str(ctime()))
         self.timer = timer
         self.count = 0
-        
+
 
     def on_data(self, data):
         try:
@@ -30,7 +30,7 @@ class StdOutListener(StreamListener):
                 self.dataJson =simplejson.loads(data[:-1])
                 self.dataJsonText = self.dataJson["text"].lower()
                 self.count += 1
-                if "Hello" in self.dataJsonText:
+                if "hello" in self.dataJsonText:
                     print self.dataJsonText
 
             else:
@@ -55,6 +55,3 @@ if __name__ == '__main__':
     l = StdOutListener(60)
     mystream = tweepy.Stream(auth, l, timeout=60)
     mystream.sample()
-
-
-
