@@ -14,10 +14,10 @@ else:
         records = cur.fetchall()
         for rec in records:
             print "(",rec[0],rec[1],")\n"
-    else: 
+    else:
       word = sys.argv[1]
       cur.execute("SELECT count from tweetwordcount WHERE word=%s", (word,))
-      print 'Total number of occurrences of "',word,'": ',cur.fetchone()[0]
+      print 'Total number of occurrences of "',word.strip(),'": ',cur.fetchone()[0]
 
     conn.commit()
     conn.close()
