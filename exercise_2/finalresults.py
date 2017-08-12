@@ -9,4 +9,4 @@ if len(sys.argv) == 2:
   word = sys.argv[1]
   cur.execute("SELECT count from tweetwordcount WHERE word=%s", (word,))
   #record =
-  print(cur.fetchone()[0])
+  print('Total number of occurrences of "',word,'": ',cur.fetchone()[0])
