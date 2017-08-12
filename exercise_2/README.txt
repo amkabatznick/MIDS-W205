@@ -5,3 +5,8 @@ Exercise 2
 <li> On Mac or Linux: export Key_Name = "Key Value"</li>
 <li> On Windows: set Key_Name = "Key Value"</li>
 </ul>
+
+<h1>Requirements</h1>
+<ul>Packages:
+<li> nltk
+</ul>

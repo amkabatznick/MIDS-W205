@@ -8,9 +8,9 @@ import sys
 
 
 try:
-    consumer_key = os.environ['TWITTER_CONSUMER_KEY'];
+    consumer_key = os.environ['TWITTER_CONSUMER_KEY']
     consumer_secret = os.environ['TWITTER_CONSUMER_SECRET']
-    access_token = os.environ['TWITTER_ACCESS_TOKEN'];
+    access_token = os.environ['TWITTER_ACCESS_TOKEN']
     access_secret = os.environ['TWITTER_ACCESS_SECRET']
 except:
     sys.stderr.write("TWITTER_ * environment variables not set \n")
