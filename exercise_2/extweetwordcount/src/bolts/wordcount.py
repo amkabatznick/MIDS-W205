@@ -24,11 +24,10 @@ class WordCounter(Bolt):
         # you need to create both the database and the table in advance.
         cur = self.conn.cursor()
         if word not in self.stopWords:
+            cur.execute("UPDATE tweetwordcount SET count=count+1 WHERE word=%s", (word.encode('utf8'),))
             if cur.rowcount == 0:
                 cur.execute("INSERT INTO tweetwordcount (word,count) \
                       VALUES (%s, 1)",(word.encode('utf8'),))
-            else:
-                cur.execute("UPDATE tweetwordcount SET count=count+1 WHERE word=%s", (word.encode('utf8'),))
 
         self.conn.commit()
 
