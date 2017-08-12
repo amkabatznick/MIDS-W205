@@ -16,6 +16,7 @@ else:
             print "(%s,%s)\n" %(rec[0],rec[1])
     else:
       word = sys.argv[1]
+      word = word.lower()
       cur.execute("SELECT count from tweetwordcount WHERE word=%s", (word,))
       print 'Total number of occurrences of "%s": %s"' %(word,cur.fetchone()[0])
 
