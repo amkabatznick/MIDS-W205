@@ -12,7 +12,7 @@ else:
     cur.execute("SELECT word, count from tweetwordcount where count between %s and %s order by count desc", (nums[0], nums[1]))
     records = cur.fetchall()
     if not cur.rowcount:
-        print "No Record Found in Range"
+        print "No Records Found in Range"
     else:
         for rec in records:
             print "%s: %s\n" %(rec[0],rec[1])
