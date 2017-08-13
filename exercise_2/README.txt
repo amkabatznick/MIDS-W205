@@ -43,5 +43,5 @@ $cd ..
 		II. If called without a word input it will return all results alphabetically.
 			--This can be achieved using the command line prompt: $python finalresults.py
 	B. The histogram.py function returns all words that are between the minimum and maximum number of occurances and takes 2 inputs. The first input is the minimum characters and the second is the maximum number of charters.
-		I. The function can be called using the command line prompt: $python histogram.py min_chars,mar_chars. A working example can be found at MIDS-W205/exercise_2/screenshots/screenshot-histogram.png
+		I. The function can be called using the command line prompt: $python histogram.py min_chars,max_chars. A working example can be found at MIDS-W205/exercise_2/screenshots/screenshot-histogram.png
 			
